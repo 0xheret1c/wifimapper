@@ -13,7 +13,18 @@ SERVER_PASS = "root"
 
 
 def connect():
-    return mariadb.connect(host=SERVER_IP,port=SERVER_PORT,user=SERVER_USER, password=SERVER_PASS, database='data')
+    print("Trying to connect to " + SERVER_IP + ":" +  SERVER_PORT + " as " + SERVER_PASS)
+    retry = True
+    while retry: 
+        try:    
+            con = mariadb.connect(host=SERVER_IP,port=SERVER_PORT,user=SERVER_USER, password=SERVER_PASS, database='data')
+            retry = False
+        except:
+            print("Retrying to connect to " + SERVER_IP + ":" +  SERVER_PORT + " as " + SERVER_PASS + " in 5 seconds...")
+            retry = True
+            time.sleep(5)
+    return con
+
 
 connection = connect()
 
@@ -22,17 +33,22 @@ def sendToDB(data):
     if(len(splt) <= 0):
         return
     
-    time = splt[0]
+    _time = splt[0]
     strength = splt[6]
     source = splt[13].replace("SA:","")
-    print("Time: " + time)
+    print("Time: " + _time)
     print("Strength: " + strength)
     print("Source: " + source)
     print(" ")
 
+    try:
+        cursor = connection.cursor()
+        cursor.execute("INSERT INTO captures (location,ap,time,strength,source) VALUES (%s,%s)", (LOCATION, AP_NUMBER,_time,strength,source))
+    except:
+        print("Failed to insert into DB!")
 
-    cursor = connection.cursor()
-    cursor.execute("INSERT INTO captures (location,ap,time,strength,source) VALUES (%s,%s)", (LOCATION, AP_NUMBER,time,strength,source))
+                
+        
 
 
 while True:
