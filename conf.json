@@ -1,0 +1,20 @@
+{
+    "ap": 
+    {
+        "number": "0",
+        "ip": "192.168.0.2"
+    },
+    "db_server": 
+    {
+        "ip": "192.168.0.2",
+        "port": "1337",
+        "user": "root",
+        "pass": "root",
+        "db_name": "rawdb"
+    },
+    "ap_control": 
+    {
+        "ip": "192.168.0.2",
+        "port": "1337"
+    }
+}

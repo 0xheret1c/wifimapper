@@ -3,13 +3,23 @@
 import mysql.connector as mariadb
 import sys
 import time
+import json
+
+with open("./conf.json", 'r') as f:
+    config = json.load(f)
+
+AP_NUMBER = config["ap"]["number"]
+
+SERVER_IP = config["db"]["ip"]
+SERVER_PORT = config["db"]["port"]
+SERVER_USER = config["db"]["user"]
+SERVER_PASS = config["db"]["pass"]
+SERVER_DB = config["db"]["db_name"]
+
+CURRENT_SESSION = "0"
 LOCATION = "LOCATION_A"
-AP_NUMBER = "0"
-SERVER_IP = "127.0.0.1"
-SERVER_DB = "db_raw_data"
-SERVER_PORT = "3306"
-SERVER_USER = "root"
-SERVER_PASS = "root"
+
+
 
 
 
