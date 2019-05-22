@@ -19,7 +19,7 @@ def exec(cmd):
     os.system(cmd)
 
 def chhop(hop_to):
-    cmd = "./channelhopper.sh " + str(hop_to)
+    cmd = "./channelhopper.py" + str(hop_to)
     exec(cmd)
     CURRENT_CHANNEL = hop_to
 
@@ -48,7 +48,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             # Start-Scan
             start_scan()
         if data == "STOP_SCAN":
-            # Start-Scan
+           print("",end='')
         if data == "HOP":
             chhop(args[0])
         if data == "DISCONNECT":
