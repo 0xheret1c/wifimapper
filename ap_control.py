@@ -2,6 +2,7 @@
 
 import socket
 import json
+import os
 
 with open("./conf.json", 'r') as f:
     config = json.load(f)
@@ -10,6 +11,10 @@ HOST = config["ap_ctrl"]["ip"]      # The server's hostname or IP address
 PORT = config["ap_ctrl"]["port"] # The port used by the server
 
 STOP = False
+
+def create_session():
+    query = "INSER INTO ..."
+    os.system("./exec_db_query.py \"" + query + "\"")
 
 def get_command():
     invalidCommand = True
