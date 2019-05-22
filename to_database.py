@@ -20,9 +20,6 @@ CURRENT_SESSION = "0"
 LOCATION = "LOCATION_A"
 
 
-
-
-
 def connect():
     print("Trying to connect to " + SERVER_IP + ":" +  SERVER_PORT + " as " + SERVER_PASS)
     retry = True
