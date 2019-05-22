@@ -4,6 +4,6 @@ import sys
 import subprocess
 
 #Export env
-os.system("./monitormode.sh on")
-os.system("./dump.sh")
-os.system("./monitormode.sh off")
+os.system("./monitormode.py on")
+os.system("./dump.py")
+os.system("./monitormode.py off")

@@ -2,7 +2,10 @@
     "ap": 
     {
         "number": "0",
-        "ip": "192.168.0.2"
+        "ip": "192.168.0.2",
+        "bluetooth_dev":"xxx",
+        "network_dev":"wlan0",
+        "network_monitor_dev":"wlan1"
     },
     "db": 
     {
