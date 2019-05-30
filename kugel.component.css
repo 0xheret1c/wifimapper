@@ -1,0 +1,13 @@
+#kugel{
+    Position: absolute;
+    text-align: center;
+    border: 10px solid black;
+    border-radius: 100px;
+    top: 200px;
+    left: 300px;
+    width: 50px;
+    height: 50px;
+    background: red;
+    padding: 20px;
+    color: white;
+}
