@@ -1,0 +1,31 @@
+
+<!-- Titel mit Suchleiste +  Button -->
+<div class="container-fluid bg-success" id="titel">
+
+          <img src="https://image.flaticon.com/icons/png/512/34/34202.png" id="lupe" width="38px" height="38px">
+          <app-suche></app-suche>
+</div>
+
+<!-- Filter und Raster (Karte) -->
+<div class="container-fluid">
+  <div class="row">
+    
+    <!-- Filter -->
+      <div class="col-3 bg-secondary" id="filter">
+        <app-mac></app-mac>
+        <app-filter></app-filter>
+      </div>
+
+    <!-- Raster/Koordinatensystem/Karte -->
+      <div class="col-9 bg-light" id="karte">
+          <div class="row">
+            <div id="begrenzung">
+              <!--Demokugel-->
+              <!--<app-kugel></app-kugel>-->
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Graph-paper.svg/2000px-Graph-paper.svg.png" id="rasterbild1" width="100%" height="100%">
+            </div>
+      </div>
+
+  </div>
+</div>
+<script src="C:/Users/silve/bluetooth-mapper/src/assets/demokugel.js" type="text/javascript"> </script>
