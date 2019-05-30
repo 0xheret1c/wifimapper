@@ -23,16 +23,16 @@ export class MacComponent implements OnInit {
        name [count] = data[count].Name;
        count++;
       }
-      
-      $("#mac").click(function(){
-      //Namen an den DOM binden
-      var count2 = 0;
 
+       //Namen an den DOM binden
+      var count2 = 0;
       while(count2 < name.length-1){
         $( "#platzhalter" ).append( '<p style="width: 100%; padding:8px;" id="beispiel">' + name[count2] + '</p>');
         count2++;
       }
-      $("p").toggle();
+      
+      $("#mac").click(function(){
+        $("p").toggle();
       });
 
     });
