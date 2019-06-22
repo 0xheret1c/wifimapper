@@ -16,6 +16,7 @@ def dbmToMeter(dBm):
     return round(distance,4)
 
 def calculatePosition(circleA, circleB, circleC):
+    
 
 def calculateInterception(circleA,circleB):
-    
+
